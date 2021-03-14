@@ -25,7 +25,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-   
+}
+
+@mixin space-around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 @mixin bg-position {
@@ -47,4 +52,11 @@
     @media (min-width: 768px) {
        @content;
     }
+}
+
+@mixin desktop {
+    @media (min-width: 1280px) {
+        @content;
+    }
+
 }

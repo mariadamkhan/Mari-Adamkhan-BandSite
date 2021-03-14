@@ -20,23 +20,26 @@ body {
   justify-content: center;
   box-sizing: border-box;
 
-  @include tablet {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
+    @include tablet {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
   &__bandsite {
     @include min-max;
     height: 24%;
     padding: $mobile-spacing 0 0.5rem;
     @include half-centre;
 
-    @include tablet {
-      @include reset;
-      @include fit;
-      margin: 0 4rem 0 $tablet-spacing;
-    }
+      @include tablet {
+        @include reset;
+        @include fit;
+        margin: 0 4rem 0 $tablet-spacing;
+      }
+
+      @include desktop {
+        margin: 0 5.6rem 0 $desktop-spacing;
+      }
   }
   &__list {
     @include reset;
@@ -51,9 +54,13 @@ body {
     @include tablet {
       min-width: 35%;
       max-width: 35%;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
+      @include space-around;
+    }
+
+    @include desktop {
+      min-width: 15%;
+      max-width: 15%;
+      justify-content: space-between;
     }
   }
   &__item {
@@ -65,6 +72,12 @@ body {
       @include fit;
       padding: 0 5px;
       height: 7.6rem;
+    }
+
+    @include desktop {
+      min-width:37%;
+      max-width: 37%;
+      @include reset;
     }
     &--active {
       border-bottom: 0.4rem solid $white;
@@ -86,9 +99,13 @@ body {
   display: flex;
   align-items: center;
 
-  @include tablet {
-    height: 40rem;
-  }
+    @include tablet {
+      height: 40rem;
+    }
+
+    @include desktop {
+      height: 67rem;
+    }
   &__title {
     @include reset;
     width: 70%;
@@ -97,10 +114,15 @@ body {
     color: $white;
     margin-left: $mobile-spacing;
 
-    @include tablet {
-      margin-left: $tablet-spacing;
-      font-size: $h1desk-hero;
-    }
+      @include tablet {
+        margin-left: $tablet-spacing;
+        font-size: $h1desk-hero;
+      }
+
+      @include desktop {
+        width: 40%;
+        margin-left: $desktop-spacing;
+      }
   }
 }
 
@@ -111,7 +133,11 @@ body {
 
     @include tablet {
       margin: 0 $tablet-spacing;
-  }
+    }
+
+    @include desktop {
+      margin: 0 $desktop-spacing;
+    }
   &__title {
     font-size: $h1mobile;
     font-weight: $bold;
@@ -121,8 +147,12 @@ body {
       @include tablet {
         font-size: $h1desk-header;
         margin: 4rem 0 3.2rem;
-    }
-  }
+      } 
+
+      @include desktop {
+        margin: 4.8rem 0;
+      }
+   }
   &__band-img {
     height: 14.5rem;
     
@@ -130,12 +160,25 @@ body {
       @include tablet {
         @include min-max;
         height: 36.2rem;
-    }
+      }
+
+      @include desktop {
+        @include min-max;
+        height: 45rem;
+        display: flex;
+        justify-content: center;
+      }
   }
   &__img {
     @include min-max;
     height: 100%;
     box-sizing: border-box;
+
+      @include desktop {
+        min-width: 89.6rem;
+        max-width: 89.6rem;
+        height: 45rem;
+      }
   }
   &__quote {
     font-size: 1.6rem;
@@ -148,7 +191,12 @@ body {
         font-weight: $bold;
         line-height: 3.2rem;
         margin-top: 4rem;
-    }
+      }
+
+      @include desktop {
+        width: 75%;
+        margin: 4.8rem 0 4rem 9.2rem;
+      }
   }
   &__author {
     @include reset;
@@ -158,16 +206,25 @@ body {
 
       @include tablet {
         font-size: $h3desk;
-    }
+      }
+
+      @include desktop {
+        margin: 0 0 5.6rem 9.2rem;
+      }
   }
   &__record {
     @include flex-column;
 
-      @include tablet;
+      @include tablet {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         margin-bottom: 4rem;
+      }
+
+      @include desktop {
+        margin: 0 9.2rem 4.8rem
+      }
 
   }
   &__subtitle {
@@ -177,7 +234,11 @@ body {
 
       @include tablet {
         @include min-max;
-    }
+      }
+
+      @include desktop {
+        margin-bottom: 3.2rem;
+      }
   }
   &__text {
     @include reset;
@@ -189,14 +250,22 @@ body {
         font-size: $h2mobile;
         line-height: 2.2rem;
       }
+
+      @include desktop {
+        width: 47%
+      }
     &--second {
       @extend .about__text;
-      margin-top: 2.4rem;
+      margin: 2.4rem 0 4rem;
 
         @include tablet {
           @include reset;
           margin-left: $tablet-spacing;
-      }
+        }
+
+        @include desktop {
+          margin-left: 4rem;
+        }
     }
   }
 }
@@ -221,6 +290,10 @@ body {
         @include min-max;
         margin-bottom: 5.8rem;
       }
+
+      @include desktop {
+        margin-bottom: 6.4rem;
+      }
   }
   &__img {
     margin-bottom: $mobile-spacing;
@@ -229,6 +302,11 @@ body {
         margin-bottom: $tablet-spacing;
         height: 12.6rem;
         width: 22.4rem;
+      }
+
+      @include desktop {
+        height: 19.3rem;
+        width: 34.4rem;
       }
   }
 }
@@ -239,6 +317,10 @@ body {
   margin-top: 2.4rem;
   @include flex-column;
   box-sizing: border-box;
+
+    @include desktop {
+      margin-top: 1.6rem;
+    }
   &__container {
     @include reset;
     margin: 0 $footer-mobile-spacing;
@@ -261,6 +343,10 @@ body {
         width: fit-content;
         margin: 4rem $tablet-spacing;
       }
+
+      @include desktop {
+        margin:4.8rem 0 5.6rem $desktop-spacing ;
+      }
   }
   &__icons {
     display: flex;
@@ -272,6 +358,12 @@ body {
         @include reset;
         width: 25%;
         justify-content: space-evenly;
+      }
+
+      @include desktop {
+        width: 8%;
+        justify-content: space-between;
+        margin-left: 5rem;
       }
   }
   &__icon {
@@ -287,7 +379,12 @@ body {
         display: flex;
         width: 12rem;
         position: relative;
-        left: 156px;
+        left: 15.6rem;
+      }
+
+      @include desktop {
+        left: 56.5rem;
+
       }
   }
   &__container-two {
@@ -296,6 +393,11 @@ body {
         margin: 0 $tablet-spacing;
         @include space-between;
         box-sizing: border-box;
+      }
+
+      @include desktop {
+        width: 84rem;
+        margin: 0 0 0 $desktop-spacing;
       }
   }
   &__body {
@@ -307,6 +409,12 @@ body {
 
       @include tablet {
         width: 34%;
+      }
+
+      @include desktop {
+        height: 18.8rem;
+        width: 38%;
+        margin-bottom: 0;
       }
   }
   &__name {
@@ -334,6 +442,10 @@ body {
   &__email {
     @include reset;
     @extend .contact__location;
+
+    @include desktop {
+      padding-bottom: 4rem;
+    }
   }
   &__copyright {
     @extend .contact__email;
@@ -342,7 +454,12 @@ body {
     margin-bottom: 3.2rem;
 
     @include tablet {
-      margin-left: $tablet-spacing;
+      margin: 1rem 0 4rem $tablet-spacing;
+    }
+
+    @include desktop {
+      padding: 0;
+      margin: 0 0 4rem $desktop-spacing;
     }
   }
 }
