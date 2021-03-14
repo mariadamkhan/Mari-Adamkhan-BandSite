@@ -20,10 +20,23 @@ body {
   justify-content: center;
   box-sizing: border-box;
 
-  &__title {
+  @include tablet {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__bandsite {
     @include min-max;
     height: 24%;
-    padding: 1.6rem 0 0.5rem;
+    padding: $mobile-spacing 0 0.5rem;
+    @include half-centre;
+
+    @include tablet {
+      @include reset;
+      @include fit;
+      margin: 0 4rem 0 $tablet-spacing;
+    }
   }
   &__list {
     @include reset;
@@ -34,11 +47,25 @@ body {
     font-size: $h2mobile;
     font-weight: $demi;
     display: flex;
+
+    @include tablet {
+      min-width: 35%;
+      max-width: 35%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
   }
   &__item {
     width: 50%;
     opacity: 0.5;
-    @include flex-centre;
+    @include full-centre;
+
+    @include tablet {
+      @include fit;
+      padding: 0 5px;
+      height: 7.6rem;
+    }
     &--active {
       border-bottom: 0.4rem solid $white;
       opacity: 1;
@@ -58,6 +85,10 @@ body {
   @include bg-position;
   display: flex;
   align-items: center;
+
+  @include tablet {
+    height: 40rem;
+  }
   &__title {
     @include reset;
     width: 70%;
@@ -65,26 +96,43 @@ body {
     font-weight: $bold;
     color: $white;
     margin-left: $mobile-spacing;
+
+    @include tablet {
+      margin-left: $tablet-spacing;
+      font-size: $h1desk-hero;
+    }
   }
 }
 
 .about {
-  @include reset;
   margin: 0 $mobile-spacing;
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   box-sizing: border-box;
+
+    @include tablet {
+      margin: 0 $tablet-spacing;
+  }
   &__title {
     font-size: $h1mobile;
     font-weight: $bold;
     margin: 3rem 0 2rem;
     box-sizing: border-box;
+
+      @include tablet {
+        font-size: $h1desk-header;
+        margin: 4rem 0 3.2rem;
+    }
   }
   &__band-img {
     height: 14.5rem;
-    box-sizing: border-box;
+    
+
+      @include tablet {
+        @include min-max;
+        height: 36.2rem;
+    }
   }
-  &__img{
+  &__img {
     @include min-max;
     height: 100%;
     box-sizing: border-box;
@@ -94,44 +142,94 @@ body {
     font-weight: $demi;
     line-height: 2.2rem;
     margin: 2.4rem 0 3.2rem;
+
+      @include tablet {
+        font-size: $h1mobile;
+        font-weight: $bold;
+        line-height: 3.2rem;
+        margin-top: 4rem;
+    }
   }
   &__author {
     @include reset;
     font-size: $h2mobile;
     font-weight: $demi;
     margin-bottom: 4rem;
+
+      @include tablet {
+        font-size: $h3desk;
+    }
   }
   &__record {
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
+
+      @include tablet;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin-bottom: 4rem;
+
   }
   &__subtitle {
     @extend .about__quote;
     @include reset;
     margin-bottom: 2.4rem;
+
+      @include tablet {
+        @include min-max;
+    }
   }
   &__text {
     @include reset;
     font-size: $paragmobile;
     line-height: 2rem;
-    &--second{
+
+      @include tablet {
+        width: 48%;
+        font-size: $h2mobile;
+        line-height: 2.2rem;
+      }
+    &--second {
       @extend .about__text;
-      margin: 2.4rem 0 4rem;
+      margin-top: 2.4rem;
+
+        @include tablet {
+          @include reset;
+          margin-left: $tablet-spacing;
+      }
     }
   }
-
 }
 
 .gallery {
   background-color: $gallery-bg;
   &__container {
     @extend .about;
+
+      @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+
+      }
   }
   &__title {
     @extend .about__title;
+
+      @include tablet {
+        @include min-max;
+        margin-bottom: 5.8rem;
+      }
   }
   &__img {
     margin-bottom: $mobile-spacing;
+
+      @include tablet {
+        margin-bottom: $tablet-spacing;
+        height: 12.6rem;
+        width: 22.4rem;
+      }
   }
 }
 
@@ -139,36 +237,86 @@ body {
   background-color: $nav-footer-bg;
   color: $white;
   margin-top: 2.4rem;
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   box-sizing: border-box;
   &__container {
     @include reset;
     margin: 0 $footer-mobile-spacing;
+
+      @include tablet {
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        position: relative;
+       
+      }
   }
   &__title {
     font-size: $h1desk-header;
     font-weight: $bold;
     margin-top: 4rem;
+
+      @include tablet {
+        width: fit-content;
+        margin: 4rem $tablet-spacing;
+      }
   }
   &__icons {
     display: flex;
     justify-content: space-between;
     width: 45%;
     margin: 0 0 3.2rem 0.6rem;
+
+      @include tablet {
+        @include reset;
+        width: 25%;
+        justify-content: space-evenly;
+      }
+  }
+  &__icon {
+    @include tablet{
+        width: 2.1rem;
+        height: 2.4rem;
+    }
+  }
+  &__logo {
+    display: none;
+
+      @include tablet {
+        display: flex;
+        width: 12rem;
+        position: relative;
+        left: 156px;
+      }
+  }
+  &__container-two {
+      @include tablet {
+        width: 76rem;
+        margin: 0 $tablet-spacing;
+        @include space-between;
+        box-sizing: border-box;
+      }
   }
   &__body {
     @include reset;
-    display: flex;
-    flex-direction: column;
+    @include flex-column;
     justify-content: space-between;
     height: 13rem;
-    margin-bottom: 2.4rem; 
+    margin-bottom: 2.4rem;
+
+      @include tablet {
+        width: 34%;
+      }
   }
   &__name {
     @include reset;
     font-size: $h2mobile;
     font-weight: $demi;
+
+    @include tablet {
+      font-size: $h3desk;
+    }
   }
   &__company {
     @extend .contact__name;
@@ -178,6 +326,10 @@ body {
     font-weight: $regular;
     font-size: $paragmobile;
     line-height: 2rem;
+
+      @include tablet {
+        font-size: $h2mobile;
+      }
   }
   &__email {
     @include reset;
@@ -188,6 +340,9 @@ body {
     width: 65%;
     line-height: 1.8rem;
     margin-bottom: 3.2rem;
-  }
 
+    @include tablet {
+      margin-left: $tablet-spacing;
+    }
+  }
 }

@@ -32,11 +32,33 @@ body {
   justify-content: center;
   box-sizing: border-box;
 }
-.nav__title {
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+.nav__bandsite {
   min-width: 100%;
   max-width: 100%;
   height: 24%;
   padding: 1.6rem 0 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .nav__bandsite {
+    margin: 0;
+    padding: 0;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    margin: 0 4rem 0 2.4rem;
+  }
 }
 .nav__list {
   margin: 0;
@@ -50,12 +72,33 @@ body {
   font-weight: 500;
   display: flex;
 }
+@media (min-width: 768px) {
+  .nav__list {
+    min-width: 35%;
+    max-width: 35%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
 .nav__item {
   width: 50%;
   opacity: 0.5;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (min-width: 768px) {
+  .nav__item {
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    padding: 0 5px;
+    height: 7.6rem;
+  }
 }
 .nav__item--active {
   border-bottom: 0.4rem solid #fff;
@@ -76,6 +119,11 @@ body {
   display: flex;
   align-items: center;
 }
+@media (min-width: 768px) {
+  .hero {
+    height: 40rem;
+  }
+}
 .hero__title {
   margin: 0;
   padding: 0;
@@ -85,14 +133,23 @@ body {
   color: #fff;
   margin-left: 1.6rem;
 }
+@media (min-width: 768px) {
+  .hero__title {
+    margin-left: 2.4rem;
+    font-size: 6rem;
+  }
+}
 
 .about, .gallery__container {
-  margin: 0;
-  padding: 0;
   margin: 0 1.6rem;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+}
+@media (min-width: 768px) {
+  .about, .gallery__container {
+    margin: 0 2.4rem;
+  }
 }
 .about__title, .gallery__title {
   font-size: 2.4rem;
@@ -100,9 +157,21 @@ body {
   margin: 3rem 0 2rem;
   box-sizing: border-box;
 }
+@media (min-width: 768px) {
+  .about__title, .gallery__title {
+    font-size: 3.8rem;
+    margin: 4rem 0 3.2rem;
+  }
+}
 .about__band-img {
   height: 14.5rem;
-  box-sizing: border-box;
+}
+@media (min-width: 768px) {
+  .about__band-img {
+    min-width: 100%;
+    max-width: 100%;
+    height: 36.2rem;
+  }
 }
 .about__img {
   min-width: 100%;
@@ -116,6 +185,14 @@ body {
   line-height: 2.2rem;
   margin: 2.4rem 0 3.2rem;
 }
+@media (min-width: 768px) {
+  .about__quote, .about__subtitle {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 3.2rem;
+    margin-top: 4rem;
+  }
+}
 .about__author {
   margin: 0;
   padding: 0;
@@ -123,14 +200,29 @@ body {
   font-weight: 500;
   margin-bottom: 4rem;
 }
+@media (min-width: 768px) {
+  .about__author {
+    font-size: 1.6rem;
+  }
+}
 .about__record {
   display: flex;
   flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 4rem;
 }
 .about__subtitle {
   margin: 0;
   padding: 0;
   margin-bottom: 2.4rem;
+}
+@media (min-width: 768px) {
+  .about__subtitle {
+    min-width: 100%;
+    max-width: 100%;
+  }
 }
 .about__text, .about__text--second {
   margin: 0;
@@ -138,15 +230,51 @@ body {
   font-size: 1.2rem;
   line-height: 2rem;
 }
+@media (min-width: 768px) {
+  .about__text, .about__text--second {
+    width: 48%;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+}
 .about__text--second {
-  margin: 2.4rem 0 4rem;
+  margin-top: 2.4rem;
+}
+@media (min-width: 768px) {
+  .about__text--second {
+    margin: 0;
+    padding: 0;
+    margin-left: 2.4rem;
+  }
 }
 
 .gallery {
   background-color: #FAFAFA;
 }
+@media (min-width: 768px) {
+  .gallery__container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media (min-width: 768px) {
+  .gallery__title {
+    min-width: 100%;
+    max-width: 100%;
+    margin-bottom: 5.8rem;
+  }
+}
 .gallery__img {
   margin-bottom: 1.6rem;
+}
+@media (min-width: 768px) {
+  .gallery__img {
+    margin-bottom: 2.4rem;
+    height: 12.6rem;
+    width: 22.4rem;
+  }
 }
 
 .contact {
@@ -162,16 +290,68 @@ body {
   padding: 0;
   margin: 0 1rem;
 }
+@media (min-width: 768px) {
+  .contact__container {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+  }
+}
 .contact__title {
   font-size: 3.8rem;
   font-weight: 700;
   margin-top: 4rem;
+}
+@media (min-width: 768px) {
+  .contact__title {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 4rem 2.4rem;
+  }
 }
 .contact__icons {
   display: flex;
   justify-content: space-between;
   width: 45%;
   margin: 0 0 3.2rem 0.6rem;
+}
+@media (min-width: 768px) {
+  .contact__icons {
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    justify-content: space-evenly;
+  }
+}
+@media (min-width: 768px) {
+  .contact__icon {
+    width: 2.1rem;
+    height: 2.4rem;
+  }
+}
+.contact__logo {
+  display: none;
+}
+@media (min-width: 768px) {
+  .contact__logo {
+    display: flex;
+    width: 12rem;
+    position: relative;
+    left: 156px;
+  }
+}
+@media (min-width: 768px) {
+  .contact__container-two {
+    width: 76rem;
+    margin: 0 2.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+  }
 }
 .contact__body {
   margin: 0;
@@ -182,11 +362,21 @@ body {
   height: 13rem;
   margin-bottom: 2.4rem;
 }
+@media (min-width: 768px) {
+  .contact__body {
+    width: 34%;
+  }
+}
 .contact__name, .contact__company {
   margin: 0;
   padding: 0;
   font-size: 1.4rem;
   font-weight: 500;
+}
+@media (min-width: 768px) {
+  .contact__name, .contact__company {
+    font-size: 1.6rem;
+  }
 }
 .contact__location, .contact__email, .contact__copyright {
   margin: 0;
@@ -194,6 +384,11 @@ body {
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 2rem;
+}
+@media (min-width: 768px) {
+  .contact__location, .contact__email, .contact__copyright {
+    font-size: 1.4rem;
+  }
 }
 .contact__email, .contact__copyright {
   margin: 0;
@@ -203,4 +398,9 @@ body {
   width: 65%;
   line-height: 1.8rem;
   margin-bottom: 3.2rem;
+}
+@media (min-width: 768px) {
+  .contact__copyright {
+    margin-left: 2.4rem;
+  }
 }/*# sourceMappingURL=main.css.map */
