@@ -13,7 +13,7 @@ body {
 
 .nav {
   @include reset;
-  background-color: $nav-bg;
+  background-color: $nav-footer-bg;
   height: 8rem;
   display: flex;
   flex-wrap: wrap;
@@ -21,27 +21,29 @@ body {
   box-sizing: border-box;
 
   &__title {
+    @include min-max;
     height: 24%;
     padding: 1.6rem 0 0.5rem;
   }
   &__list {
     @include reset;
-    width: 100%;
+    @include min-max;
     height: 50%;
     list-style: none;
     color: $white;
     font-size: $h2mobile;
-    font-weight: 600;
+    font-weight: $demi;
     display: flex;
   }
   &__item {
     width: 50%;
+    opacity: 0.5;
     @include flex-centre;
     &--active {
       border-bottom: 0.4rem solid $white;
+      opacity: 1;
     }
   }
-
   &__link {
     color: $white;
     text-decoration: none;
@@ -50,6 +52,7 @@ body {
 
 .hero {
   height: 18.3rem;
+  @include min-max;
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
     url(../assets/images/album-hero-image.jpg);
   @include bg-position;
@@ -59,9 +62,132 @@ body {
     @include reset;
     width: 70%;
     font-size: $h1mobile;
-    font-weight: 700;
+    font-weight: $bold;
     color: $white;
     margin-left: $mobile-spacing;
-
   }
+}
+
+.about {
+  @include reset;
+  margin: 0 $mobile-spacing;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  &__title {
+    font-size: $h1mobile;
+    font-weight: $bold;
+    margin: 3rem 0 2rem;
+    box-sizing: border-box;
+  }
+  &__band-img {
+    height: 14.5rem;
+    box-sizing: border-box;
+  }
+  &__img{
+    @include min-max;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  &__quote {
+    font-size: 1.6rem;
+    font-weight: $demi;
+    line-height: 2.2rem;
+    margin: 2.4rem 0 3.2rem;
+  }
+  &__author {
+    @include reset;
+    font-size: $h2mobile;
+    font-weight: $demi;
+    margin-bottom: 4rem;
+  }
+  &__record {
+    display: flex;
+    flex-direction: column;
+  }
+  &__subtitle {
+    @extend .about__quote;
+    @include reset;
+    margin-bottom: 2.4rem;
+  }
+  &__text {
+    @include reset;
+    font-size: $paragmobile;
+    line-height: 2rem;
+    &--second{
+      @extend .about__text;
+      margin: 2.4rem 0 4rem;
+    }
+  }
+
+}
+
+.gallery {
+  background-color: $gallery-bg;
+  &__container {
+    @extend .about;
+  }
+  &__title {
+    @extend .about__title;
+  }
+  &__img {
+    margin-bottom: $mobile-spacing;
+  }
+}
+
+.contact {
+  background-color: $nav-footer-bg;
+  color: $white;
+  margin-top: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  &__container {
+    @include reset;
+    margin: 0 $footer-mobile-spacing;
+  }
+  &__title {
+    font-size: $h1desk-header;
+    font-weight: $bold;
+    margin-top: 4rem;
+  }
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    width: 45%;
+    margin: 0 0 3.2rem 0.6rem;
+  }
+  &__body {
+    @include reset;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 13rem;
+    margin-bottom: 2.4rem; 
+  }
+  &__name {
+    @include reset;
+    font-size: $h2mobile;
+    font-weight: $demi;
+  }
+  &__company {
+    @extend .contact__name;
+  }
+  &__location {
+    @include reset;
+    font-weight: $regular;
+    font-size: $paragmobile;
+    line-height: 2rem;
+  }
+  &__email {
+    @include reset;
+    @extend .contact__location;
+  }
+  &__copyright {
+    @extend .contact__email;
+    width: 65%;
+    line-height: 1.8rem;
+    margin-bottom: 3.2rem;
+  }
+
 }

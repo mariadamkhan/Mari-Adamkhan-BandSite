@@ -15,7 +15,9 @@
           alt="BandSite Name"
         />
         <ul class="nav__list">
-          <li class="nav__item nav__item--active"><a class="nav__link" href="#">Biography</a></li>
+          <li class="nav__item nav__item--active">
+            <a class="nav__link" href="#">Biography</a>
+          </li>
           <li class="nav__item"><a class="nav__link" href="#">Shows</a></li>
         </ul>
       </nav>
@@ -27,11 +29,13 @@
     <main>
       <article class="about">
         <h2 class="about__title">About The Musicians</h2>
-        <img
-          class="about__img"
-          src="./assets/images/band-members-image.jpg"
-          alt="Band Members"
-        />
+        <div class="about__band-img">
+          <img
+            class="about__img"
+            src="./assets/images/band-members-image.jpg"
+            alt="Band Members"
+          />
+        </div>
         <p class="about__quote">
           “We are more comfortable with not fighting what comes naturally.
           Before we might have thought, ‘We need to be smarter than this’”
@@ -45,80 +49,91 @@
             With an immediate connection, the pair decided to try their hand at
             making a song. That’s when they created their breakout single, We
             Are Your Friends – a feel-good, funk-filled, instant anthem that
-            lost the remix contest, but won the attention of Pedro Winter,
-            director of the newly founded Ed Banger Records, who boasted Daft
-            Punk as former clients. One week later, they were in his office,
-            signing a record deal.
+            lost the remix<br />
+            contest, but won the attention of Pedro Winter, director of the
+            newly founded Ed Banger Records, who boasted Daft Punk as former
+            clients. One week later, they were in his office, signing a record
+            deal.
           </p>
-          <p class="about__text">
+          <p class="about__text--second">
             Xavier De Ronsay and Gaspard Augé had a few mutual friends, who
             happened to run a record label, seeking tracks for a compilation.
             With an immediate connection, the pair decided to try their hand at
             making a song. That’s when they created their breakout single, We
             Are Your Friends – a feel-good, funk-filled, instant anthem that
-            lost the remix contest, but won the attention of Pedro Winter,
-            director of the newly founded Ed Banger Records, who boasted Daft
-            Punk as former clients. One week later, they were in his office,
-            signing a record deal.
+            lost the remix<br />
+            contest, but won the attention of Pedro Winter, director of the
+            newly founded Ed Banger Records, who boasted Daft Punk as former
+            clients. One week later, they were in his office, signing a record
+            deal.
           </p>
         </div>
       </article>
 
       <article class="gallery">
-        <h2 class="gallery__title">Photo Gallery</h2>
-        <img class="gallery__img" src="./assets/images/Photo-gallery-1.jpg" />
-        <img class="gallery__img" src="./assets/images/Photo-gallery-2.jpg" />
-        <img class="gallery__img" src="./assets/images/Photo-gallery-3.jpg" />
-        <img class="gallery__img" src="./assets/images/Photo-gallery-4.jpg" />
-        <img class="gallery__img" src="./assets/images/Photo-gallery-5.jpg" />
-        <img class="gallery__img" src="./assets/images/Photo-gallery-6.jpg" />
-        <img class="gallery__img" src="./assets/images/Photo-gallery-7.jpg" />
-        <img class="gallery__img" src="./assets/images/Photo-gallery-8.jpg" />
-        <img class="gallery__img" src="./assets/images/Photo-gallery-9.jpg" />
+        <div class="gallery__container">
+          <h2 class="gallery__title">Photo Gallery</h2>
+          <img class="gallery__img" src="./assets/images/Photo-gallery-1.jpg" />
+          <img class="gallery__img" src="./assets/images/Photo-gallery-2.jpg" />
+          <img class="gallery__img" src="./assets/images/Photo-gallery-3.jpg" />
+          <img class="gallery__img" src="./assets/images/Photo-gallery-4.jpg" />
+          <img class="gallery__img" src="./assets/images/Photo-gallery-5.jpg" />
+          <img class="gallery__img" src="./assets/images/Photo-gallery-6.jpg" />
+          <img class="gallery__img" src="./assets/images/Photo-gallery-7.jpg" />
+          <img class="gallery__img" src="./assets/images/Photo-gallery-8.jpg" />
+          <img class="gallery__img" src="./assets/images/Photo-gallery-9.jpg" />
+        </div>
       </article>
     </main>
 
-    <footer>
-      <section class="contact">
+    <footer class="contact">
+      <section class="contact__container">
         <h2 class="contact__title">Get In Touch</h2>
-        <img
-          class="contact__icon"
-          src="./assets/icons/svg/Icon-instagram.svg"
-          alt="Icon-instagram"
-        />
-        <img
-          class="contact__icon"
-          src="./assets/icons/svg/Icon-facebook.svg"
-          alt="Icon-facebook"
-        />
-        <img
-          class="contact__icon"
-          src="./assets/icons/svg/Icon-twitter.svg"
-          alt="Icon-twitter"
-        />
-        <div class="contact__container">
-          <h3 class="contact__name">
-            Richard Rovner The Bees Knees Management
-          </h3>
+        <div class="contact__icons">
+          <img
+            class="contact__icon"
+            src="./assets/icons/svg/Icon-instagram.svg"
+            alt="Icon-instagram"
+          />
+          <img
+            class="contact__icon"
+            src="./assets/icons/svg/Icon-facebook.svg"
+            alt="Icon-facebook"
+          />
+          <img
+            class="contact__icon"
+            src="./assets/icons/svg/Icon-twitter.svg"
+            alt="Icon-twitter"
+          />
+        </div>
+        <div class="contact__body">
+          <div class="contact__individual">
+            <h3 class="contact__name">Richard Rovner</h3>
+            <h3 class="contact__company">The Bees Knees Management</h3>
+          </div>
           <p class="contact__location">
-            460 King Street West Toronto, Ontario M5V 1L7
+            460 King Street West<br />
+            Toronto, Ontario M5V 1L7
           </p>
           <p class="contact__email">info@thebeesknees.com</p>
         </div>
-        <div class="contact__container">
-          <h3 class="contact__name">
-            Marsha Vlasic Artist Group International
-          </h3>
+        <div class="contact__body">
+          <div class="contact__individual">
+            <h3 class="contact__name">Marsha Vlasic</h3>
+            <h3 class="contact__company">Artist Group International</h3>
+          </div>
           <p class="contact__location">
-            Booking Agent for US / South America / Japan
+            Booking Agent for<br />
+            US / South America / Japan
           </p>
           <p class="contact__email">marsha.vlasic@artistgrp.com</p>
         </div>
-        <div class="contact__container">
-          <h3 class="contact__name">
-            Russel Warby William Morrir Entertainment
-          </h3>
-          <p class="contact__location">Booking Agent for UK / EU / AU</p>
+        <div class="contact__body">
+          <div class="contact__individual">
+            <h3 class="contact__name">Russel Warby</h3>
+            <h3 class="contact__company">William Morrir Entertainment</h3>
+          </div>
+          <p class="contact__location">Booking Agent for<br> UK / EU / AU</p>
           <p class="contact__email">RLW@wmeentertainment.com</p>
         </div>
         <p class="contact__copyright">

@@ -8,7 +8,7 @@
   font-family: "Avenir";
   src: url("../../assets/fonts/Linotype\ -\ AvenirNextLTPro-Demi.otf")
   format("truetype");
-  font-weight: 600;
+  font-weight: 500;
 }
 
 @font-face {
@@ -18,5 +18,13 @@
   font-weight: 700;
 }
 
-$h2mobile: 1.4rem;
+
 $h1mobile: 2.4rem;
+$h2mobile: 1.4rem;
+$h1desk-header:3.8rem;
+
+$paragmobile: 1.2rem;
+
+$regular: 400;
+$demi: 500;
+$bold: 700;

@@ -5,7 +5,7 @@
 @font-face {
   font-family: "Avenir";
   src: url("../../assets/fonts/Linotype - AvenirNextLTPro-Demi.otf") format("truetype");
-  font-weight: 600;
+  font-weight: 500;
 }
 @font-face {
   font-family: "Avenir";
@@ -33,28 +33,33 @@ body {
   box-sizing: border-box;
 }
 .nav__title {
+  min-width: 100%;
+  max-width: 100%;
   height: 24%;
   padding: 1.6rem 0 0.5rem;
 }
 .nav__list {
   margin: 0;
   padding: 0;
-  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
   height: 50%;
   list-style: none;
   color: #fff;
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 500;
   display: flex;
 }
 .nav__item {
   width: 50%;
+  opacity: 0.5;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .nav__item--active {
   border-bottom: 0.4rem solid #fff;
+  opacity: 1;
 }
 .nav__link {
   color: #fff;
@@ -63,6 +68,8 @@ body {
 
 .hero {
   height: 18.3rem;
+  min-width: 100%;
+  max-width: 100%;
   background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/album-hero-image.jpg);
   background-size: cover;
   background-position: center;
@@ -77,4 +84,123 @@ body {
   font-weight: 700;
   color: #fff;
   margin-left: 1.6rem;
+}
+
+.about, .gallery__container {
+  margin: 0;
+  padding: 0;
+  margin: 0 1.6rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.about__title, .gallery__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 3rem 0 2rem;
+  box-sizing: border-box;
+}
+.about__band-img {
+  height: 14.5rem;
+  box-sizing: border-box;
+}
+.about__img {
+  min-width: 100%;
+  max-width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.about__quote, .about__subtitle {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.2rem;
+  margin: 2.4rem 0 3.2rem;
+}
+.about__author {
+  margin: 0;
+  padding: 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+.about__record {
+  display: flex;
+  flex-direction: column;
+}
+.about__subtitle {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2.4rem;
+}
+.about__text, .about__text--second {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+.about__text--second {
+  margin: 2.4rem 0 4rem;
+}
+
+.gallery {
+  background-color: #FAFAFA;
+}
+.gallery__img {
+  margin-bottom: 1.6rem;
+}
+
+.contact {
+  background-color: #323232;
+  color: #fff;
+  margin-top: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.contact__container {
+  margin: 0;
+  padding: 0;
+  margin: 0 1rem;
+}
+.contact__title {
+  font-size: 3.8rem;
+  font-weight: 700;
+  margin-top: 4rem;
+}
+.contact__icons {
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+  margin: 0 0 3.2rem 0.6rem;
+}
+.contact__body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 13rem;
+  margin-bottom: 2.4rem;
+}
+.contact__name, .contact__company {
+  margin: 0;
+  padding: 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.contact__location, .contact__email, .contact__copyright {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+.contact__email, .contact__copyright {
+  margin: 0;
+  padding: 0;
+}
+.contact__copyright {
+  width: 65%;
+  line-height: 1.8rem;
+  margin-bottom: 3.2rem;
 }/*# sourceMappingURL=main.css.map */
