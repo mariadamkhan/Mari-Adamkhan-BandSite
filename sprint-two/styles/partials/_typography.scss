@@ -1,21 +1,28 @@
 @font-face {
   font-family: "Avenir";
-  src: url("../.././assets/fonts/Linotype\ -\ AvenirNextLTPro-Regular.otf")
+  src: url("../.././assets/fonts/Linotype-AvenirNextLTPro-Regular.otf")
   format("truetype");
 }
 
 @font-face {
   font-family: "Avenir";
-  src: url("../../assets/fonts/Linotype\ -\ AvenirNextLTPro-Demi.otf")
+  src: url("../../assets/fonts/Linotype-AvenirNextLTPro-Demi.otf")
   format("truetype");
   font-weight: 500;
 }
 
 @font-face {
   font-family: "Avenir";
-  src: url("../../assets/fonts/Linotype\ -\ AvenirNextLTPro-Bold.otf")
+  src: url("../../assets/fonts/Linotype-AvenirNextLTPro-Bold.otf")
   format("truetype");
   font-weight: 700;
+}
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../../assets/fonts/Linotype-AvenirNextLTPro-Heavy.otf")
+  format("truetype");
+  font-weight: 900;
 }
 
 
@@ -30,4 +37,5 @@ $h3desk: 1.6rem;
 $regular: 400;
 $demi: 500;
 $bold: 700;
+$heavy: 900;
 

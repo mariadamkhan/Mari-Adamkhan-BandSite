@@ -1,0 +1,100 @@
+@use 'partials/typography' as *;
+@use 'partials/variables' as *;
+@use 'partials/mixins' as *;
+
+// Hero
+.hero {
+    height: 47.2rem;
+    @include min-max;
+    background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
+      url(../assets/images/shows-hero.jpg);
+    @include bg-position;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow: hidden;
+
+   
+    @include tablet {
+      height: 67rem;
+    }
+  
+    @include desktop {
+      height: 67rem;
+      flex-direction: row;
+      align-items: center;
+    }
+    &__text-container {
+
+        @include desktop {
+            width: 40%;
+            height: 100%;
+            margin: 0 6.4rem 0 18rem;
+        }
+    }
+    &__album{
+      color: $white;
+      font-size: $h2mobile;
+      font-weight: $bold;
+      margin: 6.4rem 0 1rem $mobile-spacing;
+
+      @include tablet {
+          margin: 9.6rem 0 2rem $tablet-spacing;
+          font-size: 2.6rem;
+        }
+
+      @include desktop {
+          margin: 16rem 0 4.8rem;
+      }
+    }
+    &__title {
+      @include reset;
+      width: 95%;
+      font-size: 3.6rem;
+      font-weight: $heavy;
+      color: $white;
+      margin: 0 0 6rem $mobile-spacing;
+  
+      @include tablet {
+        width: 78%;
+        margin: 0 0 4.5rem $tablet-spacing;
+        font-size: $h1desk-hero;
+      }
+  
+      @include desktop {
+          @include reset;
+          width: 100%;
+    
+      }
+    }
+    &__player {
+        margin: 0 $mobile-spacing;
+
+        @include tablet {
+            margin: 0 $tablet-spacing;
+            width: 55%;
+        }
+
+        @include desktop {
+            @include reset;
+            width: 43.6rem;
+            position: relative;
+        }
+
+    }
+    &__soundcloud {
+        width: 100%;
+        height:9.6rem;   
+
+        @include tablet {
+            height: 14rem;
+        }
+
+        @include desktop {
+            height: 14.6rem;
+            position: relative;
+            top: 60px;
+        }
+     }
+
+  }
