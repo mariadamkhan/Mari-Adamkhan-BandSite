@@ -275,6 +275,7 @@ body {
 // Gallery
 .gallery {
   background-color: $gallery-bg;
+  padding-bottom: 4rem;
   &__container {
     @extend .about;
 
@@ -313,11 +314,96 @@ body {
   }
 }
 
+.comments {
+  @extend .about;
+  padding-bottom: 3.2rem;
+  border-bottom: 0.1rem solid $mercury;
+  &__title {
+    @extend .about__title;
+    margin: 3.2rem 0 3.5rem;
+  }
+  &__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+  }
+  &__avatar {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    position: relative;
+    top: 22px;
+  }
+  &__form{
+    display: flex;
+    flex-direction: column;
+  }
+  &__heading {
+    color: $silver;
+    text-transform: uppercase;
+    font-size: $paragmobile;
+    font-weight: $demi;
+    margin: 0 0 0.5rem 0;
+  }
+  &__input {
+    @include reset;
+    width:22.4rem;
+    height: 4rem;
+    border: 0.1rem solid $mercury;
+    border-radius: 0.4rem;
+    color: $graphite;
+    background-color: $gallery-bg;
+    margin-bottom: 1.5rem;
+
+  }
+  &__input::placeholder{
+    color: $graphite;
+    font-family: "Avenir";
+    padding-left: 1rem;
+  }
+  &__input:focus{
+    outline: none;
+    border: 0.2rem solid $graphite;
+  }
+
+  &__desc {
+    border-radius: 0.4rem;
+    background-color: $gallery-bg;
+    border: 0.1rem solid $mercury;
+  }
+  &__desc:focus{
+    outline: none;
+    border: 0.2rem solid $graphite;
+  }
+  &__desc::placeholder {
+    color: $graphite;
+    font-family: "Avenir";
+    padding-left: 1rem;
+  }
+  &__submit {
+    @include min-max;
+    @include reset;
+    font-size: 1.3rem;
+    height: 4.8rem;
+    color: $white;
+    font-weight: $bold;
+    text-transform: uppercase;
+    background-color: $graphite;
+    border-radius: 0.4rem;
+    border-style: none;
+    margin: 1.5rem 0 1rem;
+  }
+  &__submit:hover {
+    background-color: black;
+
+  }
+  }
+
 // Footer
 .contact {
   background-color: $nav-footer-bg;
   color: $white;
-  margin-top: 2.4rem;
   @include flex-column;
   box-sizing: border-box;
 
