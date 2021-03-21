@@ -4,160 +4,239 @@
 
 // Hero
 .hero {
-    height: 47.2rem;
-    @include min-max;
-    background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
-      url(../assets/images/shows-hero.jpg);
-    @include bg-position;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    overflow: hidden;
+  height: 47.2rem;
+  @include min-max;
+  background: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)),
+    url(../assets/images/shows-hero.jpg);
+  @include bg-position;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
 
-   
-    @include tablet {
-      height: 67rem;
-    }
-  
+  @include tablet {
+    height: 67rem;
+  }
+
+  @include desktop {
+    height: 67rem;
+    flex-direction: row;
+    align-items: center;
+  }
+  &__text-container {
     @include desktop {
-      height: 67rem;
-      flex-direction: row;
-      align-items: center;
+      width: 40%;
+      height: 100%;
+      margin: 0 6.4rem 0 18rem;
     }
-    &__text-container {
+  }
+  &__album {
+    color: $white;
+    font-size: $h2mobile;
+    font-weight: $bold;
+    margin: 6.4rem 0 1rem $mobile-spacing;
 
-        @include desktop {
-            width: 40%;
-            height: 100%;
-            margin: 0 6.4rem 0 18rem;
-        }
+    @include tablet {
+      margin: 9.6rem 0 2rem $tablet-spacing;
+      font-size: 2.6rem;
     }
-    &__album{
-      color: $white;
+
+    @include desktop {
+      margin: 16rem 0 4.8rem;
+    }
+  }
+  &__title {
+    @include reset;
+    width: 95%;
+    font-size: 3.6rem;
+    font-weight: $heavy;
+    color: $white;
+    margin: 0 0 6rem $mobile-spacing;
+
+    @include tablet {
+      width: 78%;
+      margin: 0 0 4.5rem $tablet-spacing;
+      font-size: $h1desk-hero;
+    }
+
+    @include desktop {
+      @include reset;
+      width: 100%;
+    }
+  }
+  &__player {
+    margin: 0 $mobile-spacing;
+
+    @include tablet {
+      margin: 0 $tablet-spacing;
+      width: 55%;
+    }
+
+    @include desktop {
+      @include reset;
+      width: 43.6rem;
+      position: relative;
+    }
+  }
+  &__soundcloud {
+    width: 100%;
+    height: 9.6rem;
+
+    @include tablet {
+      height: 14rem;
+    }
+
+    @include desktop {
+      height: 14.6rem;
+      position: relative;
+      top: 6rem;
+    }
+  }
+}
+
+// shows
+.shows {
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    flex-direction: row;
+    margin: 0 $desktop-spacing;
+  }
+
+  &__title {
+    font-size: 3.2rem;
+    font-weight: $heavy;
+    margin: 3.2rem 0 4rem $mobile-spacing;
+
+    @include tablet {
+      margin: 4.8rem 0 4rem $tablet-spacing;
+    }
+
+    @include desktop {
+      margin-top: 4.8rem;
+      width: 20%;
+      height: 100%;
+      display: flex;
+    }
+  }
+  &__wrap {
+    @include desktop {
+      margin-bottom: 2rem;
+    }
+  }
+  &__header {
+    display: none;
+
+    @include tablet {
+      @include reset;
+      list-style: none;
+      color: $silver;
+      text-transform: uppercase;
       font-size: $h2mobile;
       font-weight: $bold;
-      margin: 6.4rem 0 1rem $mobile-spacing;
-
-      @include tablet {
-          margin: 9.6rem 0 2rem $tablet-spacing;
-          font-size: 2.6rem;
-        }
-
-      @include desktop {
-          margin: 16rem 0 4.8rem;
-      }
-    }
-    &__title {
-      @include reset;
-      width: 95%;
-      font-size: 3.6rem;
-      font-weight: $heavy;
-      color: $white;
-      margin: 0 0 6rem $mobile-spacing;
-  
-      @include tablet {
-        width: 78%;
-        margin: 0 0 4.5rem $tablet-spacing;
-        font-size: $h1desk-hero;
-      }
-  
-      @include desktop {
-          @include reset;
-          width: 100%;
-    
-      }
-    }
-    &__player {
-        margin: 0 $mobile-spacing;
-
-        @include tablet {
-            margin: 0 $tablet-spacing;
-            width: 55%;
-        }
-
-        @include desktop {
-            @include reset;
-            width: 43.6rem;
-            position: relative;
-        }
-
-    }
-    &__soundcloud {
-        width: 100%;
-        height:9.6rem;   
-
-        @include tablet {
-            height: 14rem;
-        }
-
-        @include desktop {
-            height: 14.6rem;
-            position: relative;
-            top: 60px;
-        }
-     }
-
-  }
-
-  .shows {
       display: flex;
-      flex-direction: column;
-      &__title {
-        font-size: 3.2rem;
-        font-weight: $heavy;
-        margin: 3.2rem 0 4rem $mobile-spacing;
-      }
-      &__header {
-          display: none;
-      }
-      &__container {
-          @include reset;
-          display: flex;
-          flex-direction: column;
-          margin: 0 $mobile-spacing;
-      }
-      &__item {
-          list-style: none;
-          @include reset;
-          margin-bottom: 2.4rem;
+      justify-content: space-between;
+      margin: 0 $tablet-spacing;
+      width: 72%;
+    }
 
-          &--btn {
-              @extend .shows__item;
-              padding-bottom: 1.6rem;
-              border-bottom: 1px solid #E1E1E1;
-          }
-      }
-      &__subtitle {
-        @include reset;
-          color: $silver;
-          text-transform: uppercase;
-          font-size: $h2mobile;
-          margin-bottom: 1rem;
-      }
-      &__data {
-          @include reset;
-          font-size: $h2mobile;
-          font-weight: $regular;
-          &--em {
-              @extend .shows__data;
-              font-size: 1.7rem;
-              font-weight: $bold;
-          }
-      }
-      &__cta {
-          @include min-max;
-          @include reset;
-          font-size: $h3desk;
-          height: 4.8rem;
-          color: $white;
-          font-weight: $bold;
-          text-transform: uppercase;
-          background-color: $graphite;
-          border-radius: 0.4rem;
-          border-style: none;
-          margin-top: 0.8rem;
-          
-      }
-
-
+    @include desktop {
+      margin: 4rem 0 0 3.4rem;
+      width: 70%;
+    }
   }
+  &__categories {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      width: 35%;
+    }
+
+    @include desktop {
+      width: 30%;
+    }
+  }
+  &__container {
+    @include reset;
+    display: flex;
+    flex-direction: column;
+    margin: 0 $mobile-spacing;
+
+    @include tablet {
+      margin: 0 $tablet-spacing;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      height: 8rem;
+      border-bottom: 0.1rem solid $mercury;
+    }
+
+    @include desktop {
+      width: 80.4rem;
+    }
+  }
+  &__item {
+    list-style: none;
+    @include reset;
+    margin-bottom: 2.4rem;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+  &__item:nth-of-type(4n + 4) {
+    @extend .shows__item;
+    padding-bottom: 1.6rem;
+    border-bottom: 0.1rem solid $mercury;
+
+    @include tablet {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+  &__subtitle {
+    @include reset;
+    color: $silver;
+    text-transform: uppercase;
+    font-size: $h2mobile;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+  &__data {
+    @include reset;
+    font-size: $h2mobile;
+    font-weight: $regular;
+
+    @include tablet {
+      width: 18rem;
+    }
+  }
+  //   &__data:nth-of-type(1n + 2) {
+  //     @extend .shows__data;
+  //     font-size: 1.7rem;
+  //     font-weight: $bold;
+  // }
+  &__cta {
+    @include min-max;
+    @include reset;
+    font-size: $h3desk;
+    height: 4.8rem;
+    color: $white;
+    font-weight: $bold;
+    text-transform: uppercase;
+    background-color: $graphite;
+    border-radius: 0.4rem;
+    border-style: none;
+    margin-top: 0.8rem;
+
+    @include tablet {
+      width: 16rem;
+      height: 4.8rem;
+    }
+  }
+}
