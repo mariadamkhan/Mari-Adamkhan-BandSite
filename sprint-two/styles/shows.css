@@ -8,14 +8,9 @@
   font-weight: 500;
 }
 @font-face {
-  font-family: "Avenir";
+  font-family: "Avenir" Verdana, Geneva, Tahoma, sans-serif;
   src: url("../../assets/fonts/Linotype-AvenirNextLTPro-Bold.otf") format("truetype");
   font-weight: 700;
-}
-@font-face {
-  font-family: "Avenir";
-  src: url("../../assets/fonts/Linotype-AvenirNextLTPro-Heavy.otf") format("truetype");
-  font-weight: 900;
 }
 .hero {
   height: 47.2rem;
@@ -70,7 +65,7 @@
   padding: 0;
   width: 95%;
   font-size: 3.6rem;
-  font-weight: 900;
+  font-weight: 700;
   color: #fff;
   margin: 0 0 6rem 1.6rem;
 }
@@ -125,6 +120,7 @@
 .shows {
   display: flex;
   flex-direction: column;
+  margin-top: 0;
 }
 @media (min-width: 1280px) {
   .shows {
@@ -134,7 +130,7 @@
 }
 .shows__title {
   font-size: 3.2rem;
-  font-weight: 900;
+  font-weight: 700;
   margin: 3.2rem 0 4rem 1.6rem;
 }
 @media (min-width: 768px) {
@@ -241,7 +237,7 @@
   padding: 0;
   color: #AFAFAF;
   text-transform: uppercase;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
 }
 @media (min-width: 768px) {
