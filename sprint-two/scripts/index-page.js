@@ -1,3 +1,5 @@
+///////////////// default comments/////////
+
 // listing all arrays with their objects 
 let allComments = [
   {
@@ -83,5 +85,19 @@ function addComment() {
 
 }
 addComment();
+//////////////// adding a comment to the form ///////////
 
-
+let today = new Date();
+let logComment = document.getElementById("logComment").addEventListener("submit", function(event) {
+    event.preventDefault ();
+    let nameInputValue = event.target.nameInput.value;
+    let commentValue = event.target.commentInput.value;
+    let date = (today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate());
+    allComments.unshift({       //should input new logged data into the array, to the start of the array.
+        name: nameInputValue,
+        date: date,
+        comment:commentValue,
+    })
+    event.target.reset ();
+    addComment();
+})

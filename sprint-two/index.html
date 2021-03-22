@@ -74,7 +74,7 @@
       </article>
 
       <article class="gallery">
-        <div class="gallery__container"> 
+        <div class="gallery__container">
           <h2 class="gallery__title">Photo Gallery</h2>
           <img class="gallery__img" src="./assets/images/Photo-gallery-1.jpg" />
           <img class="gallery__img" src="./assets/images/Photo-gallery-2.jpg" />
@@ -96,7 +96,7 @@
             src="./assets/images/Mohan-muruge.jpg"
             alt="Mohan Murge"
           />
-          <form class="comments__form" name="form">
+          <form id="logComment" class="comments__form" name="form">
             <label for="name" class="comments__heading">Name </label>
             <input
               type="text"
@@ -106,16 +106,14 @@
               autofocus
               required
             />
-            <label for="comment" class="comments__heading"
-              >Comment
-            </label>
+            <label for="comment" class="comments__heading">Comment </label>
             <textarea
-                name="comment"
-                cols="20"
-                rows="5"
-                class="comments__desc"
-                placeholder="Add a new comment"
-              ></textarea>
+              name="comment"
+              cols="20"
+              rows="5"
+              class="comments__desc"
+              placeholder="Add a new comment"
+            ></textarea>
             <button type="submit" class="comments__submit">Comment</button>
           </form>
         </div>

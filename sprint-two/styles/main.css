@@ -405,7 +405,7 @@ body {
   .comments__title {
     width: 100%;
     position: relative;
-    left: -270px;
+    left: -27rem;
   }
 }
 .comments__container {
@@ -511,6 +511,7 @@ body {
   border-radius: 0.4rem;
   background-color: #FAFAFA;
   border: 0.1rem solid #E1E1E1;
+  font-family: "Avenir";
 }
 @media (min-width: 1280px) {
   .comments__desc {
@@ -605,7 +606,7 @@ body {
 @media (min-width: 1280px) {
   .default-comments__img {
     width: 4.8rem;
-    height: 4.6rem;
+    height: 4.8rem;
   }
 }
 .default-comments__body {
