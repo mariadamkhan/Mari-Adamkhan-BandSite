@@ -318,6 +318,15 @@ body {
   @extend .about;
   padding-bottom: 3.2rem;
   border-bottom: 0.1rem solid $mercury;
+
+  @include tablet {
+    margin: 0 $tablet-spacing 3.5rem
+  }
+
+  @include desktop {
+    margin: 0 $desktop-spacing;
+
+  }
   &__title {
     @extend .about__title;
     margin: 3.2rem 0 3.5rem;
@@ -327,17 +336,39 @@ body {
     flex-direction: row;
     justify-content: space-between;
     position: relative;
+
+    @include tablet {
+      justify-content: center;
+    }
   }
   &__avatar {
     width: 4.5rem;
     height: 4.5rem;
     border-radius: 50%;
     position: relative;
-    top: 22px;
+    top: 2.2rem;
+
+    @include tablet {
+      margin-right: 2rem;
+    }
+
+    @include desktop {
+      width: 4.8rem;
+    height: 4.8rem;
+    }
   }
   &__form{
     display: flex;
     flex-direction: column;
+
+    @include tablet {
+      width: 60%;
+    }
+
+    @include desktop {
+      width: 47rem;
+
+    }
   }
   &__heading {
     color: $silver;
@@ -356,6 +387,14 @@ body {
     background-color: $gallery-bg;
     margin-bottom: 1.5rem;
 
+    @include tablet {
+      width: 43.2rem;
+    }
+
+    @include desktop {
+      width: 46rem;
+    }
+
   }
   &__input::placeholder{
     color: $graphite;
@@ -371,6 +410,10 @@ body {
     border-radius: 0.4rem;
     background-color: $gallery-bg;
     border: 0.1rem solid $mercury;
+
+    @include desktop {
+      width: 46rem;
+    }
   }
   &__desc:focus{
     outline: none;
@@ -393,6 +436,14 @@ body {
     border-radius: 0.4rem;
     border-style: none;
     margin: 1.5rem 0 1rem;
+
+    @include desktop {
+      min-width: 16rem;
+      max-width: 16rem;
+      height: 4.8rem;
+      margin: 1.5rem 0 1rem 31rem;
+     
+    }
   }
   &__submit:hover {
     background-color: black;
