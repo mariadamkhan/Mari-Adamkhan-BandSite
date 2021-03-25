@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <title>BandSite</title>
+  </head>
+
+  <body>
+    <header>
+      <nav class="nav">
+        <a class="nav__bandsite" href="./index.html"
+          ><img
+            class="nav__title"
+            src="./assets/logos/Logo-bandsite.svg"
+            alt="BandSite Name"
+        /></a>
+        <ul class="nav__list">
+          <li class="nav__item nav__item--active">
+            <a class="nav__link" href="./index.html">Biography</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="./pages/shows.html">Shows</a>
+          </li>
+        </ul>
+      </nav>
+
+      <section class="hero">
+        <h1 class="hero__title">Gaspard Auge & Xavier de Rosnay</h1>
+      </section>
+    </header>
+
+    <main>
+      <article class="about">
+        <h2 class="about__title">About The Musicians</h2>
+        <div class="about__band-img">
+          <img
+            class="about__img"
+            src="./assets/images/band-members-image.jpg"
+            alt="Band Members"
+          />
+        </div>
+        <p class="about__quote">
+          “We are more comfortable with not fighting what comes naturally.
+          Before we might have thought, ‘We need to be smarter than this’”
+        </p>
+        <p class="about__author">- Xavier de Rosnay</p>
+        <div class="about__record">
+          <h3 class="about__subtitle">Xavier de Rosnay & Gaspard Augé</h3>
+          <p class="about__text">
+            Xavier De Ronsay and Gaspard Augé had a few mutual friends, who
+            happened to run a record label, seeking tracks for a compilation.
+            With an immediate connection, the pair decided to try their hand at
+            making a song. That’s when they created their breakout single, We
+            Are Your Friends – a feel-good, funk-filled, instant anthem that
+            lost the remix contest, but won the attention of Pedro Winter,
+            director of the newly founded Ed Banger Records, who boasted Daft
+            Punk as former clients. One week later, they were in his office,
+            signing a record deal.
+          </p>
+          <p class="about__text--second">
+            Xavier De Ronsay and Gaspard Augé had a few mutual friends, who
+            happened to run a record label, seeking tracks for a compilation.
+            With an immediate connection, the pair decided to try their hand at
+            making a song. That’s when they created their breakout single, We
+            Are Your Friends – a feel-good, funk-filled, instant anthem that
+            lost the remix contest, but won the attention of Pedro Winter,
+            director of the newly founded Ed Banger Records, who boasted Daft
+            Punk as former clients. One week later, they were in his office,
+            signing a record deal.
+          </p>
+        </div>
+      </article>
+
+      <article class="gallery">
+        <div class="gallery__container">
+          <h2 class="gallery__title">Photo Gallery</h2>
+          <img class="gallery__img" src="./assets/images/Photo-gallery-1.jpg" />
+          <img class="gallery__img" src="./assets/images/Photo-gallery-2.jpg" />
+          <img class="gallery__img" src="./assets/images/Photo-gallery-3.jpg" />
+          <img class="gallery__img" src="./assets/images/Photo-gallery-4.jpg" />
+          <img class="gallery__img" src="./assets/images/Photo-gallery-5.jpg" />
+          <img class="gallery__img" src="./assets/images/Photo-gallery-6.jpg" />
+          <img class="gallery__img" src="./assets/images/Photo-gallery-7.jpg" />
+          <img class="gallery__img" src="./assets/images/Photo-gallery-8.jpg" />
+          <img class="gallery__img" src="./assets/images/Photo-gallery-9.jpg" />
+        </div>
+      </article>
+
+      <article class="comments">
+        <h2 class="comments__title">Join the Conversation</h2>
+        <div class="comments__container">
+          <img
+            class="comments__avatar"
+            src="./assets/images/Mohan-muruge.jpg"
+            alt="Mohan Murge"
+          />
+          <form id="logComment" class="comments__form" name="form">
+            <label for="name" class="comments__heading">Name </label>
+            <input
+              type="text"
+              name="name"
+              class="comments__input"
+              placeholder="Enter your name"
+              autofocus
+              required
+            />
+            <label for="comment" class="comments__heading">Comment </label>
+            <textarea
+              name="comment"
+              cols="20"
+              rows="5"
+              class="comments__desc"
+              placeholder="Add a new comment"
+            ></textarea>
+            <button type="submit" class="comments__submit">Comment</button>
+          </form>
+        </div>
+      </article>
+    </main>
+
+    <footer class="contact">
+      <section class="contact__container">
+        <h2 class="contact__title">Get In Touch</h2>
+        <div class="contact__icons">
+          <a class="contact__link" href="https://www.instagram.com"
+            ><img
+              class="contact__icon"
+              src="./assets/icons/svg/Icon-instagram.svg"
+              alt="Icon-instagram"
+          /></a>
+          <a class="contact__link" href="https://www.facebook.com"
+            ><img
+              class="contact__icon"
+              src="./assets/icons/svg/Icon-facebook.svg"
+              alt="Icon-facebook"
+          /></a>
+          <a class="contact__link" href="https://twitter.com"
+            ><img
+              class="contact__icon"
+              src="./assets/icons/svg/Icon-twitter.svg"
+              alt="Icon-twitter"
+          /></a>
+        </div>
+        <a class="contact__link" href="./index.html"
+          ><img
+            class="contact__logo"
+            src="./assets/logos/Logo-bandsite.svg"
+            alt="BandSite Name"
+        /></a>
+
+        <div class="contact__container-two">
+          <div class="contact__body">
+            <div class="contact__agent">
+              <h3 class="contact__name">Richard Rovner</h3>
+              <h3 class="contact__company">The Bees Knees Management</h3>
+            </div>
+            <p class="contact__location">
+              460 King Street West<br />
+              Toronto, Ontario M5V 1L7
+            </p>
+            <p class="contact__email">
+              <a class="contact__link" href="mailto:info@thebeesknees.com"
+                >info@thebeesknees.com</a
+              >
+            </p>
+          </div>
+
+          <div class="contact__body">
+            <div class="contact__agent">
+              <h3 class="contact__name">Marsha Vlasic</h3>
+              <h3 class="contact__company">Artist Group International</h3>
+            </div>
+            <p class="contact__location">
+              Booking Agent for<br />
+              US / South America / Japan
+            </p>
+            <p class="contact__email">
+              <a class="contact__link" href="mailto:marsha.vlasic@artistgrp.com"
+                >marsha.vlasic@artistgrp.com</a
+              >
+            </p>
+          </div>
+
+          <div class="contact__body">
+            <div class="contact__agent">
+              <h3 class="contact__name">Russel Warby</h3>
+              <h3 class="contact__company">William Morrir Entertainment</h3>
+            </div>
+            <p class="contact__location">
+              Booking Agent for<br />
+              UK / EU / AU
+            </p>
+            <p class="contact__email">
+              <a class="contact__link" href="mailto:RLW@wmeentertainment.com"
+                >RLW@wmeentertainment.com</a
+              >
+            </p>
+          </div>
+        </div>
+        <p class="contact__copyright">
+          Copyright The Bees Knees © 2018 All Rights Reserved
+        </p>
+      </section>
+    </footer>
+    <script src="./scripts/index-page.js"></script>
+  </body>
+</html>

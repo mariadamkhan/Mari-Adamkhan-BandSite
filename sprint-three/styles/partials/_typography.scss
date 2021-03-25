@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Avenir";
+  src: url("../.././assets/fonts/Linotype-AvenirNextLTPro-Regular.otf")
+  format("truetype");
+}
+
+@font-face {
+  font-family: "Avenir"; 
+  src: url("../../assets/fonts/Linotype-AvenirNextLTPro-Demi.otf")
+  format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Avenir" Verdana, Geneva, Tahoma, sans-serif;
+  src: url("../../assets/fonts/Linotype-AvenirNextLTPro-Bold.otf")
+  format("truetype");
+  font-weight: 700;
+}
+
+
+
+$h1mobile: 2.4rem;
+$h2mobile: 1.4rem;
+$paragmobile: 1.2rem;
+
+$h1desk-hero: 6rem;
+$h1desk-header: 3.8rem;
+$h3desk: 1.6rem;
+
+$regular: 400;
+$demi: 500;
+$bold: 700;
+$heavy: 900;
+
