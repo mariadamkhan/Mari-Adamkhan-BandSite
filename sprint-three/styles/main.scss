@@ -551,6 +551,7 @@ body {
   background-color: $nav-footer-bg;
   color: $white;
   @include flex-column;
+  margin-top: 2rem;
   box-sizing: border-box;
 
   @include desktop {

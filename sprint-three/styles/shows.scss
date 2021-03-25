@@ -100,65 +100,64 @@
   flex-direction: column;
   margin-top: 0;
 
-  @include desktop {
-    flex-direction: row;
-    margin: 0 $desktop-spacing;
-  }
+//   @include desktop {
+//     flex-direction: row;
+//     margin: 0 $desktop-spacing;
+//   }
 
   &__title {
     font-size: 3.2rem;
     font-weight: $bold;
-    ;
     margin: 3.2rem 0 4rem $mobile-spacing;
 
-    @include tablet {
-      margin: 4.8rem 0 4rem $tablet-spacing;
-    }
+//     @include tablet {
+//       margin: 4.8rem 0 4rem $tablet-spacing;
+//     }
 
-    @include desktop {
-      margin-top: 4.8rem;
-      width: 20%;
-      height: 100%;
-      display: flex;
-    }
+//     @include desktop {
+//       margin-top: 4.8rem;
+//       width: 20%;
+//       height: 100%;
+//       display: flex;
+//     }
   }
-  &__wrap {
-    @include desktop {
-      margin-bottom: 2rem;
-    }
-  }
+//   &__wrap {
+//     @include desktop {
+//       margin-bottom: 2rem;
+//     }
+//   }
   &__header {
     display: none;
 
-    @include tablet {
-      @include reset;
-      list-style: none;
-      color: $silver;
-      text-transform: uppercase;
-      font-size: $h2mobile;
-      font-weight: $bold;
-      display: flex;
-      justify-content: space-between;
-      margin: 0 $tablet-spacing;
-      width: 72%;
-    }
+//     @include tablet {
+//       @include reset;
+//       list-style: none;
+//       color: $silver;
+//       text-transform: uppercase;
+//       font-size: $h2mobile;
+//       font-weight: $bold;
+//       display: flex;
+//       justify-content: space-between;
+//       margin: 0 $tablet-spacing;
+//       width: 72%;
+//     }
 
-    @include desktop {
-      margin: 4rem 0 0 3.4rem;
-      width: 70%;
-    }
+//     @include desktop {
+//       margin: 4rem 0 0 3.4rem;
+//       width: 70%;
+//     }
   }
   &__categories {
     display: none;
 
-    @include tablet {
-      display: flex;
-      width: 35%;
-    }
+//     @include tablet {
+//       display: flex;
+//       width: 35%;
+//     }
 
-    @include desktop {
-      width: 30%;
-    }
+//     @include desktop {
+//       width: 30%;
+//     }
   }
   &__container {
     @include reset;
@@ -166,38 +165,41 @@
     flex-direction: column;
     margin: 0 $mobile-spacing;
 
-    @include tablet {
-      margin: 0 $tablet-spacing;
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: center;
-      height: 8rem;
-      border-bottom: 0.1rem solid $mercury;
-    }
+//     @include tablet {
+//       margin: 0 $tablet-spacing;
+//       flex-direction: row;
+//       justify-content: space-around;
+//       align-items: center;
+//       height: 8rem;
+//       border-bottom: 0.1rem solid $mercury;
+//     }
 
-    @include desktop {
-      width: 80.4rem;
-    }
+//     @include desktop {
+//       width: 80.4rem;
+//     }
   }
   &__item {
     list-style: none;
     @include reset;
-    margin-bottom: 2.4rem;
-
-    @include tablet {
-      margin-bottom: 0;
-    }
-  }
-  &__item:nth-of-type(4n + 4) {
-    @extend .shows__item;
     padding-bottom: 1.6rem;
     border-bottom: 0.1rem solid $mercury;
+    margin-bottom: 2.4rem;
 
-    @include tablet {
-      padding-bottom: 0;
-      border-bottom: none;
-    }
+
+//     @include tablet {
+//       margin-bottom: 0;
+//     }
   }
+  // &__item:nth-of-type(4n + 4) {
+  //   @extend .shows__item;
+  //   padding-bottom: 1.6rem;
+  //   border-bottom: 0.1rem solid $mercury;
+
+//     @include tablet {
+//       padding-bottom: 0;
+//       border-bottom: none;
+//     }
+  // }
   &__subtitle {
     @include reset;
     color: $silver;
@@ -205,18 +207,22 @@
     font-size: $paragmobile;
     margin-bottom: 1rem;
 
-    @include tablet {
-      display: none;
-    }
+//     @include tablet {
+//       display: none;
+//     }
   }
   &__data {
     @include reset;
     font-size: $h2mobile;
     font-weight: $regular;
+    margin-bottom: 2.4rem;
 
-    @include tablet {
-      width: 18rem;
-    }
+//     @include tablet {
+//       width: 18rem;
+//     }
+  }
+  &__data--emph {
+    font-weight: $bold;
   }
 
   &__cta {
@@ -231,10 +237,11 @@
     border-radius: 0.4rem;
     border-style: none;
     margin-top: 0.8rem;
+   
 
-    @include tablet {
-      width: 16rem;
-      height: 4.8rem;
-    }
+//     @include tablet {
+//       width: 16rem;
+//       height: 4.8rem;
+//     }
   }
 }
