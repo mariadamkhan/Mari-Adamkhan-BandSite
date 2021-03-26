@@ -1,83 +1,7 @@
-let allShows = [
-
-  {
-    dateTitle: "Date",
-    date: "Mon Dec 17 2018",
-  
-    venueTitle: "Venue",
-    venue: "Ronald Lane",
-  
-    locationTitle: "Location",
-    location: "San Francisco, CA",
-
-    button: "Buy Tickets"
-  },
-
-  {
-    dateTitle: "Date",
-    date: "Tue Jul 18 2019",
- 
-    venueTitle: "Venue",
-    venue: "Pier 3 East",
- 
-    locationTitle: "Location",
-    location: "San Francisco, CA",
-
-    button: "Buy Tickets"
-  },
-
-  {
-    dateTitle: "Date",
-    date: "Fri Jul 22 2019",
- 
-    venueTitle: "Venue",
-    venue: "View Loungue",
-  
-    locationTitle: "Location",
-    location: "San Francisco, CA",
-
-    button: "Buy Tickets"
-  },
-
-  {
-    dateTitle: "Date",
-    date: "Sat Aug 12 2019",
-  
-    venueTitle: "Venue",
-    venue: "Hyatt Agency",
-  
-    locationTitle: "Location",
-    location: "San Francisco, CA",
-
-    button: "Buy Tickets"
-  },
-
-  {
-    dateTitle: "Date",
-    date: "Fri Sep 5 2019",
-
-    venueTitle: "Venue",
-    venue: "Moscow Centre",
-  
-    locationTitle: "Location",
-    location: "San Francisco, CA",
-
-    button: "Buy Tickets"
-  },
-
-  {
-    dateTitle: "Date",
-    date: "Wed Aug 11 2020",
- 
-    venueTitle: "Venue",
-    venue: "Pres Club",
-  
-    locationTitle: "Location",
-    location: "San Francisco, CA",
-
-    button: "Buy Tickets"
-  },
-];
+//Global API variables for URL, key, and Shows endpoint
+const apiUrl = "https://project-1-api.herokuapp.com/"
+const apiKey = "?api_key=facc6bbf-54f1-4f7f-8b76-3c9696bf90f1"
+const showDatesEndPoint = "showdates"
 
 // creating <main> element and placing it its proper place
 // between heading & footer
@@ -89,31 +13,34 @@ body.insertBefore(main, footer);
 // function to create <h2> & <div> nested within <section>, and <ul>
 // nested within <div>
 function createElement() {
-
+  // section
   const section = document.createElement("section");
   section.classList.add("shows");
+  main.appendChild(section);
 
+  // h2
   const h2Tag = document.createElement("h2");
   h2Tag.classList.add("shows__title");
   h2Tag.innerText = "Shows";
+  section.appendChild(h2Tag);
 
+  // div
   const divTag = document.createElement("div");
   divTag.classList.add("shows__wrap");
+  section.appendChild(divTag);
 
+  // ul
   const ulHeaderTag = document.createElement("ul");
   ulHeaderTag.classList.add("shows__header");
+  divTag.appendChild(ulHeaderTag);
 
+  // second ul
   const ulShowsTag = document.createElement("ul");
   ulShowsTag.classList.add("shows__container");
-
-  main.appendChild(section);
-  section.appendChild(h2Tag);
-  section.appendChild(divTag);
-  divTag.appendChild(ulHeaderTag);
   divTag.appendChild(ulShowsTag)
 }
 
-createElement();
+createElement(); //calling the function
 
 // array of headings for the <ul> with class "shows__header"
 const showsHeadings = ["Dates", "Venue", "Location"];
@@ -133,64 +60,78 @@ function showsHeader(showsHeadings) {
 
 showsHeader(showsHeadings);
 
-function showsEvents(allShows) {
+// function that loops through every API object and creates an element and a class
+// The API data is then passed into the newly created and nested elements returning an array of shows.
+function showsEvents(apiShows) {
   const showsUl = document.querySelector(".shows__container");
 
-  allShows.forEach(item =>{
+  apiShows.forEach(show =>{
       // list item
       const showsItem = document.createElement("li");
       showsItem.classList.add("shows__item");
+      showsUl.appendChild(showsItem);
       
       // h3 element for date
       const dateHeading = document.createElement("h3");
       dateHeading.classList.add("shows__subtitle");
-      dateHeading.innerText = item.dateTitle;
+      dateHeading.innerText = "Date";
+      showsItem.appendChild(dateHeading);
       
       // p element for date info
       const showsDate = document.createElement("p");
       showsDate.classList.add("shows__data");
-      if (item.date == 2018 || 2019 || 2020 ||2021 ){
+      if (show.date == 2018 || 2019 || 2020 ||2021 ){  //creating a modifier
           showsDate.classList.add("shows__data--emph")
       }
-      showsDate.innerText = item.date;
+      showsDate.innerText = show.date;
+      showsItem.appendChild(showsDate);
       
       // h3 element for venue
       const venueHeading = document.createElement("h3");
       venueHeading.classList.add("shows__subtitle");
-      venueHeading.innerText = item.venueTitle;
+      venueHeading.innerText = "Venue";
+      showsItem.appendChild(venueHeading);
       
       // p element for venue info
       const showsVenue = document.createElement("p");
       showsVenue.classList.add("shows__data");
-      showsVenue.innerText = item.venue;
+      showsVenue.innerText = show.place;
+      showsItem.appendChild(showsVenue);
       
       // h3 element for location
       const locationHeading = document.createElement("h3");
       locationHeading.classList.add("shows__subtitle");
-      locationHeading.innerText = item.locationTitle;
+      locationHeading.innerText = "Location";
+      showsItem.appendChild(locationHeading);
       
       // p element for location info
       const showsLocation = document.createElement("p");
       showsLocation.classList.add("shows__data");
-      showsLocation.innerText = item.location;
+      showsLocation.innerText = show.location;
+      showsItem.appendChild(showsLocation);
       
        // buttom element 
       const showsButton = document.createElement("button");
       showsButton.classList.add("shows__cta");
-      showsButton.innerText = item.button;
-      
-      // appending all newly created elements to their proper
-      // nested positions 
-      showsUl.appendChild(showsItem);
-      showsItem.appendChild(dateHeading);
-      showsItem.appendChild(showsDate);
-      showsItem.appendChild(venueHeading);
-      showsItem.appendChild(showsVenue);
-      showsItem.appendChild(locationHeading);
-      showsItem.appendChild(showsLocation);
+      showsButton.innerText = "Buy Tickets";
       showsItem.appendChild(showsButton);
 
   })
 }
 
-showsEvents(allShows);
+// function to GET /showdates
+let getApiShows = () => {
+  axios.get(`${apiUrl}${showDatesEndPoint}${apiKey}`) //All the global variables above are joined together in a string.
+    .then( response => {  
+      console.log(response)
+      let apiShows = response.data; // The then is getting the response from the above concocted URL and storing it in a variable.
+      showsEvents(apiShows);       // The variable apiShows is then passed into the showsEvents function aas a parameter
+
+      })
+    .catch(error => {
+      console.log("You've made an error" + error)
+    })
+};  
+  getApiShows();
+
+  
