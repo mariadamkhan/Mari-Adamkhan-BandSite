@@ -57,7 +57,6 @@ function showsHeader(showsHeadings) {
 
   })
 }
-
 showsHeader(showsHeadings);
 
 // function that loops through every API object and creates an element and a class
@@ -119,7 +118,7 @@ function showsEvents(apiShows) {
   })
 }
 
-////////  GET /showdates////////
+////////  GET showdates////////
 let getApiShows = () => {
   axios.get(`${apiUrl}${showDatesEndPoint}${apiKey}`) //All the global variables above are joined together in a string.
     .then( response => {  
