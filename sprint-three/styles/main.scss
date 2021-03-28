@@ -278,89 +278,99 @@ body {
   padding-bottom: 4rem;
   &__container {
     @extend .about;
+    margin: 0 0.8rem;
 
     @include tablet {
+      margin: 0 1.2rem;
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: center;
+    }
+
+    @include desktop {
+      margin: 0 16.8rem;
     }
   }
   &__title {
     @extend .about__title;
 
     @include tablet {
-      @include min-max;
-      margin-bottom: 5.8rem;
+      width: 100%;
+      margin: 4rem 1.2rem 4.6rem;
     }
 
     @include desktop {
-      margin-bottom: 6.4rem;
+      margin: 4.8rem 1.2rem 5.2rem;
     }
   }
   &__img {
-    margin-bottom: $mobile-spacing;
+    margin: 0.8rem;
 
     @include tablet {
-      margin-bottom: $tablet-spacing;
       height: 12.6rem;
       width: 22.4rem;
+      margin: 1.2rem;
     }
 
     @include desktop {
       height: 19.3rem;
       width: 34.4rem;
+      margin: 1.2rem;
     }
   }
 }
 
+// Form
 .comments {
   @extend .about;
-  padding-bottom: 3.2rem;
-  border-bottom: 0.1rem solid $mercury;
+  box-sizing: border-box;
 
   @include tablet {
     margin: 0 $tablet-spacing 3.5rem;
+    align-items: center;
   }
 
   @include desktop {
     margin: 0 $desktop-spacing;
-    width: 55rem;
     display: flex;
+    align-items: center;
     box-sizing: border-box;
-    margin: auto;
-    position: relative;
   }
   &__title {
     @extend .about__title;
     margin: 3.2rem 0 3.5rem;
+    width: 100%;
 
     @include desktop {
-      width: 100%;
-      position: relative;
-      left: -27rem;
+      margin: 4.8rem 0 5.6rem;
     }
   }
   &__container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     position: relative;
+    padding-bottom: 3.2rem;
+    border-bottom: 0.1rem solid $mercury;
 
     @include tablet {
+      width: 55rem;
       justify-content: center;
     }
     @include desktop {
-      margin: 0 $desktop-spacing;
       width: 55rem;
       display: flex;
       box-sizing: border-box;
-      margin: auto;
     }
   }
   &__avatar {
-    width: 4.5rem;
-    height: 4.5rem;
+    background-image: url(../assets/images/Mohan-muruge.jpg);
+    background-position: left;
+    background-size: cover;
+    width: 4.8rem;
+    height: 4.8rem;
+    margin-right: 1.5rem;
     border-radius: 50%;
     position: relative;
     top: 2.2rem;
@@ -377,10 +387,6 @@ body {
   &__form {
     display: flex;
     flex-direction: column;
-
-    @include tablet {
-      width: 60%;
-    }
 
     @include desktop {
       width: 47rem;
@@ -411,10 +417,13 @@ body {
       width: 46rem;
     }
   }
+  &__input[type="text"] {
+    box-sizing: border-box;
+    padding-left: 1rem;
+  }
   &__input::placeholder {
     color: $graphite;
     font-family: "Avenir";
-    padding-left: 1rem;
   }
   &__input:focus {
     outline: none;
@@ -427,9 +436,17 @@ body {
     border: 0.1rem solid $mercury;
     font-family: "Avenir";
 
+    @include tablet {
+      width: 43.2rem;
+    }
+
     @include desktop {
       width: 46rem;
     }
+  }
+  &__desc[type="text"] {
+    box-sizing: border-box;
+    padding-left: 1rem;
   }
   &__desc:focus {
     outline: none;
@@ -438,7 +455,6 @@ body {
   &__desc::placeholder {
     color: $graphite;
     font-family: "Avenir";
-    padding-left: 1rem;
   }
   &__submit {
     @include min-max;
@@ -451,6 +467,7 @@ body {
     background-color: $graphite;
     border-radius: 0.4rem;
     border-style: none;
+    outline: none;
     margin: 1.5rem 0 1rem;
 
     @include tablet {
@@ -472,13 +489,13 @@ body {
   }
 }
 
-// default comments
+// Default Comments
 .default-comments {
   margin: 0 $mobile-spacing 4rem;
   &__wrap {
     margin-top: 2.4rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding-bottom: 2.4rem;
     border-bottom: 0.1rem solid $mercury;
 
@@ -494,6 +511,7 @@ body {
     width: 4.5rem;
     height: 4.5rem;
     background-color: $mercury;
+    margin-right: 1.5rem;
     border-radius: 50%;
 
     @include tablet {
@@ -514,10 +532,6 @@ body {
     @include tablet {
       justify-content: flex-start;
     }
-
-    @include desktop {
-      width: 55rem;
-    }
   }
 
   &__name {
@@ -534,15 +548,18 @@ body {
     font-size: 1.3rem;
     color: $silver;
     width: 30%;
+    text-align: end;
 
     @include tablet {
       margin-left: 1rem;
+      text-align: start;
     }
   }
   &__text {
     @include reset;
     font-size: $h2mobile;
     line-height: 2rem;
+    width: 100%;
   }
 }
 
@@ -557,7 +574,7 @@ body {
   @include desktop {
     margin-top: 1.6rem;
   }
-  &__container {
+  &__wrap {
     @include reset;
     margin: 0 $footer-mobile-spacing;
 
@@ -566,39 +583,63 @@ body {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      position: relative;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      margin: 4.8rem $tablet-spacing 5.6rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @include desktop {
+      margin: 4.8rem $desktop-spacing 5.6rem;
+    }
+  }
+  &__title-icons {
+    @include tablet {
+      display: flex;
+      width: 65%;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    @include desktop {
+      width: 65%;
     }
   }
   &__title {
-    font-size: $h1desk-header;
+    font-size: 3.6rem;
     font-weight: $bold;
     margin-top: 4rem;
 
     @include tablet {
-      width: fit-content;
-      margin: 4rem $tablet-spacing;
-    }
-
-    @include desktop {
-      margin: 4.8rem 0 5.6rem $desktop-spacing;
+      @include reset;
     }
   }
   &__icons {
     display: flex;
     justify-content: space-between;
-    width: 45%;
+    width: 13.5rem;
     margin: 0 0 3.2rem 0.6rem;
 
     @include tablet {
       @include reset;
-      width: 25%;
+      margin-left: 2.5rem;
+      width: 21rem;
       justify-content: space-evenly;
     }
 
     @include desktop {
-      width: 8%;
-      justify-content: space-between;
-      margin-left: 5rem;
+      @include reset;
+      justify-content: space-evenly;
+      margin-left: 3.2rem;
     }
   }
   &__icon {
@@ -613,12 +654,6 @@ body {
     @include tablet {
       display: flex;
       width: 12rem;
-      position: relative;
-      left: 15.6rem;
-    }
-
-    @include desktop {
-      left: 56.5rem;
     }
   }
   &__container-two {
@@ -685,6 +720,7 @@ body {
   &__link {
     text-decoration: none;
     color: $white;
+    height: fit-content;
   }
   &__copyright {
     @extend .contact__email;

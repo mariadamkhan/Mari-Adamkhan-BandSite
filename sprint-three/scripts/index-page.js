@@ -1,6 +1,6 @@
 ///////////////// default comments/////////
 
-// listing all arrays with their objects 
+// listing all arrays with their objects
 let allComments = [
   {
     name: "Michael Lyons",
@@ -20,84 +20,71 @@ let allComments = [
     comment:
       "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
   },
-]
+];
 
 const main = document.querySelector("main");
 
-// function creates a DOM element by
-// passing in the element name and class
-// & appends it to <main>, thereby creating an article element
-// that will hold the entire default comments section
-function createElement(elementName, className, data) {
-  let el = document.createElement(elementName);
-  el.classList.add(className);
-  el.innerText = data;
-  main.appendChild(el);
+// function creates an article tag and appends it to <main>
+function createElement() {
+  const articleTag = document.createElement("article");
+  articleTag.classList.add("default-comments");
+  main.appendChild(articleTag);
 }
+createElement();
 
-createElement("article", "default-comments", null);
+let commentsContainer = document.querySelector(".default-comments");
 
-// stating the article 
-let defaultComments = document.querySelector(".default-comments");
-
-// this is the main function takes in the array, 
-// loops it through and creates new elements with classes
-// nested within each other  
 function displayComments(entry) {
+  let commentWrap = document.createElement("div");
+  commentWrap.classList.add("default-comments__wrap");
+  commentsContainer.appendChild(commentWrap);
 
-   let commentWrap = document.createElement("div");
-   commentWrap.classList.add("default-comments__wrap");
+  let commentImg = document.createElement("div");
+  commentImg.classList.add("default-comments__img");
+  commentWrap.appendChild(commentImg);
 
-   let commentImg = document.createElement("div");
-   commentImg.classList.add("default-comments__img");
-   commentWrap.appendChild(commentImg);
+  let commentBody = document.createElement("div");
+  commentBody.classList.add("default-comments__body");
+  commentWrap.appendChild(commentBody);
 
-   let commentBody = document.createElement('div');
-   commentBody.classList.add("default-comments__body");
-   commentWrap.appendChild(commentBody);
+  let commentName = document.createElement("h4");
+  commentName.classList.add("default-comments__name");
+  commentName.innerText = entry.name;
+  commentBody.appendChild(commentName);
 
-// where the arrays come in now that the structure where they
-// can be house is created
-   let commentName = document.createElement('h4');
-   commentName.classList.add("default-comments__name");
-   commentName.innerText = entry.name;
-   commentWrap.appendChild(commentBody);
-   commentBody.appendChild(commentName);
-   let commentDate = document.createElement('span');
-   commentDate.classList.add("default-comments__date");
-   commentDate.innerText = entry.date;
-   commentWrap.appendChild(commentBody);
-   commentBody.appendChild(commentDate);
-   let commentP = document.createElement('p');
-   commentP.classList.add("default-comments__text");
-   commentP.innerText = entry.comment;
-   defaultComments.appendChild(commentWrap);
-   commentWrap.appendChild(commentBody);
-   commentBody.appendChild(commentP);
+  let commentDate = document.createElement("span");
+  commentDate.classList.add("default-comments__date");
+  commentDate.innerText = entry.date;
+  commentBody.appendChild(commentDate);
 
+  let commentP = document.createElement("p");
+  commentP.classList.add("default-comments__text");
+  commentP.innerText = entry.comment;
+  commentBody.appendChild(commentP);
 }
-// a second function that calls the first one.
-function addComment() {
-    defaultComments.innerHTML = ' ';
-    allComments.forEach(function(allComments) {
-        displayComments(allComments);
-    })
 
+//////////////// adding a comment to the form ///////////
+function addComment() {
+  commentsContainer.innerHTML = " ";
+  allComments.forEach(function (allComments) {
+    displayComments(allComments);
+  });
 }
 addComment();
-//////////////// adding a comment to the form ///////////
 
-let today = new Date();
-let logComment = document.getElementById("logComment").addEventListener("submit", function(event) {
-    event.preventDefault ();
-    let nameInputValue = event.target.nameInput.value;
-    let commentValue = event.target.commentInput.value;
-    let date = (today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate());
-    allComments.unshift({       //should input new logged data into the array, to the start of the array.
-        name: nameInputValue,
-        date: date,
-        comment:commentValue,
-    })
-    event.target.reset ();
-    addComment();
-})
+const now = new Date().toLocaleDateString();
+const logComment = document.getElementById("form");
+logComment.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const nameInputValue = event.target.name.value;
+  const commentValue = event.target.comment.value;
+  const date = now;
+  allComments.unshift({
+    name: nameInputValue,
+    comment: commentValue,
+    date: date,
+  });
+
+  event.target.reset();
+  addComment();
+});
