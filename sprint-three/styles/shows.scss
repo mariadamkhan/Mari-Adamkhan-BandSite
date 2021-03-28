@@ -2,6 +2,17 @@
 @use 'partials/variables' as *;
 @use 'partials/mixins' as *;
 
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Avenir", "Verdana";
+  margin: 0;
+  color: $graphite;
+}
+
+
 // Hero
 .hero {
   height: 47.2rem;
@@ -173,7 +184,6 @@
     @include reset;
     display: flex;
     flex-direction: column;
-    align-items: center;
 
     @include tablet {
       width: 100%;

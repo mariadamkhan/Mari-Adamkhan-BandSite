@@ -131,8 +131,9 @@
           <form id="form" class="comments__form" name="form">
             <label for="name" class="comments__heading">Name </label>
             <input
+              id="userName"
               type="text"
-              name="name"
+              name="userName"
               class="comments__input"
               placeholder="Enter your name"
               required
@@ -140,7 +141,8 @@
             <label for="comment" class="comments__heading">Comment </label>
             <textarea
               type="text"
-              name="comment"
+              id="userComment"
+              name="userComment"
               cols="20"
               rows="5"
               class="comments__desc"
@@ -241,6 +243,7 @@
         </p>
       </section>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
     <script src="./scripts/index-page.js"></script>
   </body>
 </html>

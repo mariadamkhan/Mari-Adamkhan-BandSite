@@ -1,6 +1,6 @@
 //Global API variables for URL, key, and Shows endpoint
 const apiUrl = "https://project-1-api.herokuapp.com/"
-const apiKey = "?api_key=facc6bbf-54f1-4f7f-8b76-3c9696bf90f1"
+const apiKey = "?api_key=2d7706ea-6452-405f-9861-54da4454201a"
 const showDatesEndPoint = "showdates"
 
 // creating <main> element and placing it its proper place
@@ -119,13 +119,12 @@ function showsEvents(apiShows) {
   })
 }
 
-// function to GET /showdates
+////////  GET /showdates////////
 let getApiShows = () => {
   axios.get(`${apiUrl}${showDatesEndPoint}${apiKey}`) //All the global variables above are joined together in a string.
     .then( response => {  
-      console.log(response)
       let apiShows = response.data; // The then is getting the response from the above concocted URL and storing it in a variable.
-      showsEvents(apiShows);       // The variable apiShows is then passed into the showsEvents function aas a parameter
+      showsEvents(apiShows);       // The variable apiShows is then passed into the showsEvents function as a parameter
 
       })
     .catch(error => {
